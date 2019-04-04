@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
-
-@Component({
+import { Component, OnInit } from '@angular/core';
+//@component decoratar contains the meta data of the component
+@Component({ 
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <h1>Hello World</h1>
+  `
 })
-export class AppComponent {
-  title = 'my-app';
+export class AppComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+  
 }
