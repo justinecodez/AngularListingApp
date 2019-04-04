@@ -1,13 +1,20 @@
+
+//NgModules help organize an application into cohesive blocks of functionality.
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-//this is the main module it organises all the code of the app
-import { AppComponent }  from './app.component';
-import { CustomersComponent } from './customers/customers.component';
+//the customer module contains the customerComponent
+import { CustomersModule } from './customers/customers.module';
+import { SharedModule } from  './shared/shared.module';
 
+//importing the app component
+import { AppComponent }  from './app.component';
+
+
+//@NgModule takes a metadata object that tells Angular how to compile and run module code
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent, CustomersComponent ],
+  imports:      [ BrowserModule, CustomersModule, SharedModule],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
